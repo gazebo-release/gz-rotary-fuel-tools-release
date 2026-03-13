@@ -1,0 +1,72 @@
+Source: gz-fuel-tools
+Maintainer: Jose Luis Rivero <jrivero@osrfoundation.org>
+Section: science
+Priority: optional
+Build-Depends: cmake,
+               doxygen,
+               pkg-config,
+               debhelper (>= 13),
+               libgz-cmake-dev,
+               libgz-common-core-dev,
+               libgz-common-testing-dev,
+               libgz-msgs-dev,
+               libgz-tools-dev,
+               libzip-dev,
+               libjsoncpp-dev,
+               libcurl4-openssl-dev,
+               libyaml-dev,
+               libtinyxml2-dev
+Vcs-Browser: https://github.com/gazebosim/gz-fuel-tools
+Vcs-Git: https://github.com/gazebo-release/gz-rotary-fuel-tools-release
+Standards-Version: 4.5.1
+Homepage: http://gazebosim.org/
+
+Package: libgz-fuel-tools
+Architecture: any
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         gz-tools
+Provides: libgz-fuel-tools-generic
+Conflicts: libgz-fuel-tools-generic, libgz-fuel-tools7, libgz-fuel-tools9, libgz-fuel-tools10, libgz-fuel-tools11
+Replaces: libgz-fuel-tools7, libgz-fuel-tools9, libgz-fuel-tools10, libgz-fuel-tools11
+Multi-Arch: same
+Description: Gazebo fuel-tools classes and functions - Shared library
+ Gazebo Fuel Tools is composed by a client library and command line
+ tools for interacting with Gazebo Fuel servers. These servers host and
+ manage different 3D robotics models.
+ .
+ The package ships the Gazebo fuel libraries
+
+Package: libgz-fuel-tools-dev
+Architecture: any
+Section: libdevel
+Depends: libgz-cmake-dev,
+       libgz-common-core-dev,
+       libgz-msgs-dev,
+       libgz-tools-dev,
+       libzip-dev,
+       libjsoncpp-dev,
+       libcurl4-openssl-dev,
+       libyaml-dev,
+       libtinyxml2-dev,
+       libgz-fuel-tools (= ${binary:Version}),
+       ${misc:Depends}
+Provides: libgz-fuel-tools-dev-generic
+Conflicts: libgz-fuel-tools-dev-generic, libgz-fuel-tools7-dev, libgz-fuel-tools9-dev, libgz-fuel-tools10-dev, libgz-fuel-tools11-dev
+Replaces: libgz-fuel-tools7-dev, libgz-fuel-tools9-dev, libgz-fuel-tools10-dev, libgz-fuel-tools11-dev
+Multi-Arch: same
+Description: Gazebo fuel-tools classes and functions - Development files
+ Gazebo Fuel Tools is composed by a client library and command line
+ tools for interacting with Gazebo Fuel servers. These servers host and
+ manage different 3D robotics models.
+ .
+ The package ships the Gazebo fuel development headers and libraries
+
+Package: gz-rotary-fuel-tools
+Depends: libgz-fuel-tools-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
