@@ -63,7 +63,7 @@ Description: Gazebo fuel-tools classes and functions - Development files
  .
  The package ships the Gazebo fuel development headers and libraries
 
-Package: gz-rotary-fuel-tools
+Package: libgz-rotary-fuel-tools-dev
 Depends: libgz-fuel-tools-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
