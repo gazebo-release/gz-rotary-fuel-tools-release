@@ -125,7 +125,7 @@ int main(int argc, char **argv)
 EOF
 
 cat <<EOF > CMakeLists.txt
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.22.1)
 
 project(gz_test VERSION 1.0.0)
 
